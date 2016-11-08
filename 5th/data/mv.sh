@@ -3,7 +3,7 @@ do
     cd $name
         for filename in $(ls)
         do
-            mv filename ${filename/${name}_}
+            mv $filename ./${filename/${name}_}
         done
     cd ..
 done
