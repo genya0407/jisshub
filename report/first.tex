@@ -5,6 +5,7 @@
 \usepackage[hiragino-pron]{luatexja-preset}
 \usepackage{luatexja-ruby}
 \usepackage{graphicx}
+\usepackage{amsmath, amssymb}
 
 \title{実習B 材料工学}
 \author{三軒家 佑將}
@@ -80,6 +81,7 @@
 	\subsection{太陽電池の作製}
 		（割愛）
 	\subsection{太陽電池の特性測定}
+		\label{sec1}
 		班員4名の太陽電池について、それぞれV-I特性をグラフにしたのが\fr{fig4}〜\fr{fig7}である。
 		\fig{fig4}{resources/solar/base/sangenya.png}{三軒家の太陽電池の特性}
 		\fig{fig5}{resources/solar/base/nagura.png}{名倉の太陽電池の特性}
@@ -92,7 +94,38 @@
 
 \section{課題1〜3}
 	\subsection{課題1}
+		\ref{sec1}の結果を見ると、名倉・三軒家と中川・板野の２つのグループに別れていることがわかる。以下では、２つのグループの代表として、三軒家と中川の太陽電池について考察をすすめる。
+		このような２つのグループに分かれてしまったのは、太陽電池の表側の電極が$p^+$領域にはみ出てしまい、ダイオードに平行な抵抗が接続されたような状態になってしまったことが原因と考えられる。
+		太陽電池だけの特性を見るためには、グラフの直線部分から並列抵抗の値を求め、そこに流れる電流値を計算して、実験データの電流値から引けば良いと考えられる。
+		以上のような操作を中川の太陽電池の特性に対して行うと、\fr{fig9}のようになる。
+		\fig{fig9}{resources/solar/diff/nakagawa.png}{中川の太陽電池のダイオード部のみの特性（暗所）}
+		これを見ると、他方のグループの暗所での特性とよく似た形状のグラフが得られる事がわかる。
+		
+		\fr{fig4}の暗所のデータと、\fr{fig9}のデータについて、片対数グラフにプロットすると、\fr{fig10}・\fr{fig11}のようになる。
+		\fig{fig10}{resources/solar/logscale/sangenya.png}{三軒家の太陽電池の特性（片対数）}
+		\fig{fig11}{resources/solar/logscale/nakagawa.png}{中川の太陽電池の特性（片対数）}
+		
+		ダイオードのI-V特性は、
+		\[
+			I = I_0 \left( exp(\frac{eV}{nkT}) - 1 \right)
+		\]
+		のように表され（e: 電気素量, n: 理想ダイオード因子, k: ボルツマン定数, T: 絶対温度）、Vがある一定の範囲のとき、
+		\begin{eqnarray}
+			I & \approx & I_0 exp(\frac{eV}{nkT}) \nonumber \\
+			\therefore log I & \approx & \frac{e}{nkT}V + log I_0 \label{eq1}
+		\end{eqnarray}
+		と近似できる。\fr{fig10}・\fr{fig11}の直線部分が、式(\ref{eq1})によって近似できるとすると、それぞれ、
+		\begin{description}
+			\item[sangenya] $ \frac{e}{nkT} = 10.4, \therefore n = 3.72 $
+			\item[nakagawa] $ \frac{e}{nkT} = 8.06, \therefore n = 4.80 $
+		\end{description}
+		となる。Iが拡散電流と再結合電流のみによると考えると、nは1〜2の値になると考えられるので、この結果と一致しない。
+		
+		このことの説明としては、Si基板中のトラップに一部のキャリアが捕らわれてしまい、電流に寄与しなくなってしまった、ということが考えられる。
+		ただし、\fr{fig10}・\fr{fig11}の直線部は、外れ値はあるにせよ、きれいな直線になっていることから、トラップの効果もVに対する指数関数で表されることが必要と考えられるが、実際にそうであるのかは調べてもわからなかった。
+		
 	\subsection{課題2}
+		
 	\subsection{課題3}
 \section{発電コンテンストについて}
 \section{LEDについて}
