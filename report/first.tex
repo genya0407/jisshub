@@ -1,0 +1,49 @@
+\documentclass[11pt]{ltjsarticle}
+
+\usepackage{fontspec}
+\usepackage{luatexja-fontspec}
+\usepackage[hiragino-pron]{luatexja-preset}
+\usepackage{luatexja-ruby}
+\usepackage{graphicx}
+
+\title{実習B 材料工学}
+\author{三軒家 佑將}
+\date{}
+
+\newcommand{\fig}[3]{
+	\begin{figure}
+		\includegraphics[width=\textwidth]{#2}
+		\caption{#3}
+		\label{#1}
+	\end{figure}
+}
+\newcommand{\fr}[1]{図\ref{#1}}
+
+\begin{document}
+\maketitle
+
+\section{実習の目的}
+	簡単なSiデバイス（太陽電池）の作成を通じて、Siデバイスの作成方法について理解を深める。また、太陽電池・LEDの動作特性について理解を深める。
+\section{バイポーラ集積回路について}
+	太陽電池の作成プロセスを図にすると\fr{fig1}のようになる。
+	\fig{fig1}{resources/process.pdf}{太陽電池の作成プロセス}
+	
+	図の説明は以下のようである。
+	\begin{description}
+		\item[①→②]Si基盤を熱酸化し、酸化膜を作成
+		\item[②→③]フォトリソグラフィを行い、図のようにフォトレジストを作成する
+		\item[③→④]エッチングを行い、酸化膜を剥がす
+		\item[④→⑤]フォトレジストを除去する
+		\item[⑤→⑥]上面にリン拡散源を、下面にホウ素拡散源を塗布する
+		\item[⑥→⑦]熱拡散を行い、${\rm n^+ - Si}$と${\rm p^+ - Si}$を形成する
+		\item[⑦→⑧]${\rm SiO_2}$を除去する
+		\item[⑧→⑨]電極を形成
+	\end{description}
+\section{実験で行った内容、条件}
+\section{実験結果}
+\section{課題1〜3}
+\section{発電コンテンストについて}
+\section{LEDについて}
+\section{全体に関する考察、感想、提案など}
+
+\end{document}
