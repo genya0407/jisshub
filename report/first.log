@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.8.20)  17 NOV 2016 21:12
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.8.20)  18 NOV 2016 00:55
  restricted system commands enabled.
  file:line:error style messages enabled.
 **first.tex
@@ -56,7 +56,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.154 seconds)
+luaotfload | main : initialization completed in 0.138 seconds)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
@@ -1148,22 +1148,76 @@ LaTeX Font Info:    Font shape `JY3/HiraKakuProN-W6(0)/m/n' will be
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2<./res
-ources/process.pdf>] [3] (./first.aux)
+ources/process.pdf>] <resources/circuit/dark.png, id=37, 351.3125pt x 250.9375p
+t>
+File: resources/circuit/dark.png Graphic file (type png)
+
+<use resources/circuit/dark.png>
+Package luatex.def Info: resources/circuit/dark.png used on input line 73.
+(luatex.def)             Requested size: 445.52753pt x 318.25822pt.
+
+<resources/circuit/light.png, id=38, 351.3125pt x 250.9375pt>
+File: resources/circuit/light.png Graphic file (type png)
+
+<use resources/circuit/light.png>
+Package luatex.def Info: resources/circuit/light.png used on input line 74.
+(luatex.def)             Requested size: 445.52753pt x 318.25822pt.
+
+<resources/solar/base/sangenya.png, id=39, 702.625pt x 451.6875pt>
+File: resources/solar/base/sangenya.png Graphic file (type png)
+
+<use resources/solar/base/sangenya.png>
+Package luatex.def Info: resources/solar/base/sangenya.png used on input line 84
+.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/solar/base/nagura.png, id=40, 702.625pt x 451.6875pt>
+File: resources/solar/base/nagura.png Graphic file (type png)
+
+<use resources/solar/base/nagura.png>
+Package luatex.def Info: resources/solar/base/nagura.png used on input line 85.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/solar/base/nakagawa.png, id=41, 702.625pt x 451.6875pt>
+File: resources/solar/base/nakagawa.png Graphic file (type png)
+
+<use resources/solar/base/nakagawa.png>
+Package luatex.def Info: resources/solar/base/nakagawa.png used on input line 86
+.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/solar/base/itano.png, id=42, 702.625pt x 451.6875pt>
+File: resources/solar/base/itano.png Graphic file (type png)
+
+<use resources/solar/base/itano.png>
+Package luatex.def Info: resources/solar/base/itano.png used on input line 87.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/led/led.png, id=43, 702.625pt x 451.6875pt>
+File: resources/led/led.png Graphic file (type png)
+
+<use resources/led/led.png>
+Package luatex.def Info: resources/led/led.png used on input line 91.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+ [3] [4<./resources/circuit/dark.png>] [5<./resources/circuit/light.png>] [6<./r
+esources/solar/base/sangenya.png><./resources/solar/base/nagura.png>] [7<./resou
+rces/solar/base/nakagawa.png><./resources/solar/base/itano.png>] [8<./resources/
+led/led.png>] (./first.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 16664 strings out of 495118
- 100000,383344 words of node,token memory allocated
- 9845 words of node memory still in use:
-   8 hlist, 1 vlist, 5 rule, 268 glue, 57 kern, 1 glyph, 3441 attribute, 44 glue
-_spec, 172 attribute_list, 1 write, 11 user_defined nodes
-   avail lists: 1:2,2:22388,3:273,4:162,5:14,6:1025,7:1280,8:806,9:226,10:14
- 19714 multiletter control sequences out of 65536+600000
+ 16741 strings out of 495118
+ 125002,383344 words of node,token memory allocated
+ 13264 words of node memory still in use:
+   8 hlist, 1 vlist, 5 rule, 417 glue, 57 kern, 1 glyph, 4575 attribute, 44 glue
+_spec, 226 attribute_list, 1 write, 11 user_defined nodes
+   avail lists: 1:5,2:35014,3:413,4:196,5:17,6:1412,7:1696,8:1032,9:299,10:14
+ 19749 multiletter control sequences out of 65536+600000
  89 fonts using 95253631 bytes
- 62i,6n,85p,947b,336s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 62i,6n,85p,947b,338s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.ot
 f></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.
 otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman10-regul
@@ -1177,10 +1231,10 @@ cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb>
-Output written on first.pdf (3 pages, 159515 bytes).
+Output written on first.pdf (8 pages, 293467 bytes).
 
-PDF statistics: 96 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+PDF statistics: 123 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
