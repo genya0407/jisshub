@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.8.20)  18 NOV 2016 02:29
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.8.20)  18 NOV 2016 03:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **first.tex
@@ -56,7 +56,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.132 seconds)
+luaotfload | main : initialization completed in 0.147 seconds)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
@@ -1300,66 +1300,103 @@ File: resources/led/led.png Graphic file (type png)
 Package luatex.def Info: resources/led/led.png used on input line 110.
 (luatex.def)             Requested size: 445.52753pt x 286.41862pt.
 
-<resources/solar/diff/nakagawa.png, id=45, 1003.75pt x 501.875pt>
+<resources/led/red.png, id=45, 702.625pt x 451.6875pt>
+File: resources/led/red.png Graphic file (type png)
+
+<use resources/led/red.png>
+Package luatex.def Info: resources/led/red.png used on input line 113.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/led/yellow.png, id=46, 702.625pt x 451.6875pt>
+File: resources/led/yellow.png Graphic file (type png)
+
+<use resources/led/yellow.png>
+Package luatex.def Info: resources/led/yellow.png used on input line 114.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/led/green.png, id=47, 702.625pt x 451.6875pt>
+File: resources/led/green.png Graphic file (type png)
+
+<use resources/led/green.png>
+Package luatex.def Info: resources/led/green.png used on input line 115.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/led/white.png, id=48, 702.625pt x 451.6875pt>
+File: resources/led/white.png Graphic file (type png)
+
+<use resources/led/white.png>
+Package luatex.def Info: resources/led/white.png used on input line 116.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+
+<resources/led/blue.png, id=49, 702.625pt x 451.6875pt>
+File: resources/led/blue.png Graphic file (type png)
+
+<use resources/led/blue.png>
+Package luatex.def Info: resources/led/blue.png used on input line 117.
+(luatex.def)             Requested size: 445.52753pt x 286.41862pt.
+ [3]
+<resources/solar/diff/nakagawa.png, id=53, 1003.75pt x 501.875pt>
 File: resources/solar/diff/nakagawa.png Graphic file (type png)
 
 <use resources/solar/diff/nakagawa.png>
-Package luatex.def Info: resources/solar/diff/nakagawa.png used on input line 11
-8.
+Package luatex.def Info: resources/solar/diff/nakagawa.png used on input line 12
+5.
 (luatex.def)             Requested size: 445.52753pt x 222.76314pt.
- [3]
-<resources/solar/logscale/sangenya.png, id=49, 1003.75pt x 501.875pt>
+
+<resources/solar/logscale/sangenya.png, id=54, 1003.75pt x 501.875pt>
 File: resources/solar/logscale/sangenya.png Graphic file (type png)
 
 <use resources/solar/logscale/sangenya.png>
 Package luatex.def Info: resources/solar/logscale/sangenya.png used on input lin
-e 122.
+e 129.
 (luatex.def)             Requested size: 445.52753pt x 222.76314pt.
 
-<resources/solar/logscale/nakagawa.png, id=50, 1003.75pt x 501.875pt>
+<resources/solar/logscale/nakagawa.png, id=55, 1003.75pt x 501.875pt>
 File: resources/solar/logscale/nakagawa.png Graphic file (type png)
 
 <use resources/solar/logscale/nakagawa.png>
 Package luatex.def Info: resources/solar/logscale/nakagawa.png used on input lin
-e 123.
+e 130.
 (luatex.def)             Requested size: 445.52753pt x 222.76314pt.
  [4<./resources/circuit/dark.png>]
 [5<./resources/circuit/light.png>] [6<./resources/solar/base/sangenya.png><./res
 ources/solar/base/nagura.png>] [7<./resources/solar/base/nakagawa.png><./resourc
 es/solar/base/itano.png>] [8<./resources/solar/kadai3/commerce.png><./resources/
-led/led.png>]
-LaTeX Font Info:    Calculating math sizes for size <9.85501> on input line 146.
+led/led.png>] [9<./resources/led/red.png><./resources/led/yellow.png>]
+[10<./resources/led/green.png><./resources/led/white.png>] [11<./resources/led/b
+lue.png><./resources/solar/diff/nakagawa.png>] [12<./resources/solar/logscale/sa
+ngenya.png><./resources/solar/logscale/nakagawa.png>]
+LaTeX Font Info:    Calculating math sizes for size <9.85501> on input line 162.
 
 LaTeX Font Info:    Font shape `JY3/HiraMinProN-W3(0)/m/n' will be
-(Font)              scaled to size 5.82565pt on input line 146.
+(Font)              scaled to size 5.82565pt on input line 162.
 LaTeX Font Info:    Font shape `JY3/HiraMinProN-W3(0)/m/n' will be
-(Font)              scaled to size 4.16121pt on input line 146.
- [9<./resources/solar/diff/nakagawa.png><./resources/solar/logscale/sangenya.png
->] [10<./resources/solar/logscale/nakagawa.png>] [11]
-<resources/solar/suda.png, id=90, 702.625pt x 451.6875pt>
+(Font)              scaled to size 4.16121pt on input line 162.
+ [13]
+<resources/solar/suda.png, id=106, 702.625pt x 451.6875pt>
 File: resources/solar/suda.png Graphic file (type png)
 
 <use resources/solar/suda.png>
-Package luatex.def Info: resources/solar/suda.png used on input line 175.
+Package luatex.def Info: resources/solar/suda.png used on input line 184.
 (luatex.def)             Requested size: 445.52753pt x 286.41862pt.
- [12<./resources/solar/suda.png>] [13]
-(./first.aux)
+ [14] [15<./resources/solar/suda.png>] [16]
+[17] (./first.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 18765 strings out of 495118
- 195319,383344 words of node,token memory allocated
- 22859 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 900 glue, 65 kern, 1 glyph, 7487 attribute, 46 glu
-e_spec, 366 attribute_list, 1 write, 15 user_defined nodes
-   avail lists: 1:6,2:60701,3:456,4:267,5:63,6:1802,7:1697,8:1397,9:348,10:28,11
-:36
- 21605 multiletter control sequences out of 65536+600000
+ 18822 strings out of 495118
+ 195325,383344 words of node,token memory allocated
+ 26941 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 1143 glue, 66 kern, 1 glyph, 8621 attribute, 46 gl
+ue_spec, 420 attribute_list, 1 write, 15 user_defined nodes
+   avail lists: 1:6,2:54409,3:471,4:304,5:51,6:2148,7:2152,8:1341,9:434,10:27,11
+:38
+ 21632 multiletter control sequences out of 65536+600000
  123 fonts using 103988951 bytes
- 62i,8n,85p,947b,531s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 62i,9n,85p,947b,527s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.ot
 f></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.
 otf></usr/local/texlive/2016/texmf-dist/fonts/opentype/public/lm/lmroman7-regula
@@ -1378,10 +1415,10 @@ mmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
 fb>
-Output written on first.pdf (13 pages, 519491 bytes).
+Output written on first.pdf (17 pages, 620204 bytes).
 
-PDF statistics: 173 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+PDF statistics: 196 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
