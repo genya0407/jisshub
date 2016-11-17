@@ -6,19 +6,33 @@
 \usepackage{luatexja-ruby}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
+\usepackage{csvsimple}
 
 \title{実習B 材料工学}
 \author{三軒家 佑將}
 \date{}
 
-\newcommand{\fig}[3]{
+\newcommand{\fg}[3]{
 	\begin{figure}
 		\includegraphics[width=\textwidth]{#2}
 		\caption{#3}
 		\label{#1}
 	\end{figure}
 }
+
+\newcommand{\tab}[3]{
+	\begin{table}[htb]
+  		\begin{center}
+			%\input{#2}
+			\csvautotabular{#2}
+    		\caption{#3}
+			\label{#1}
+  		\end{center}
+	\end{table}
+}
+
 \newcommand{\fr}[1]{図\ref{#1}}
+\newcommand{\tr}[1]{表\ref{#1}}
 
 \begin{document}
 \maketitle
@@ -27,7 +41,7 @@
 	簡単なSiデバイス（太陽電池）の作製を通じて、Siデバイスの作製方法について理解を深める。また、太陽電池・LEDの動作特性について理解を深める。
 \section{バイポーラ集積回路について}
 	太陽電池の作製プロセスを図にすると\fr{fig1}のようになる。
-	\fig{fig1}{resources/process.pdf}{太陽電池の作製プロセス}
+	\fg{fig1}{resources/process.pdf}{太陽電池の作製プロセス}
 	
 	図の説明は以下のようである。
 	\begin{description}
@@ -69,10 +83,10 @@
 		また、出来上がった太陽電池には、導電性ペーストを用いて、裏面には電子回路基板の金属部分を接着し、表面には細い導線を接着した。
 
 	\subsection{太陽電池の特性測定}
-		以下の回路（\fr{fig2},\fr{fig3}）を用いて太陽電池の特性を測定した。暗所での特性は\fr{fig2}を用いて、電灯で照らしたときの特性は\fr{fig2}を用いた。
+		以下の回路（\fr{fig2},\fr{fig3}）を用いて自作した太陽電池と市販の太陽電池の特性を測定した。暗所での特性は\fr{fig2}を用いて、電灯で照らしたときの特性は\fr{fig2}を用いた。
 		電灯で照らしたときの特性については、電灯の高さが、5cm, 15cm, 25cmの３つの場合について特性を調べた。
-		\fig{fig2}{resources/circuit/dark.png}{暗所の測定回路}
-		\fig{fig3}{resources/circuit/light.png}{光照射時の測定回路}
+		\fg{fig2}{resources/circuit/dark.png}{暗所の測定回路}
+		\fg{fig3}{resources/circuit/light.png}{光照射時の測定回路}
 
 	\subsection{LEDの特性測定}
 		\fr{fig2}と同様の回路を用いて、市販の赤・黄・緑・青・白色のLEDの特性を測定した。
@@ -83,14 +97,17 @@
 	\subsection{太陽電池の特性測定}
 		\label{sec1}
 		班員4名の太陽電池について、それぞれV-I特性をグラフにしたのが\fr{fig4}〜\fr{fig7}である。
-		\fig{fig4}{resources/solar/base/sangenya.png}{三軒家の太陽電池の特性}
-		\fig{fig5}{resources/solar/base/nagura.png}{名倉の太陽電池の特性}
-		\fig{fig6}{resources/solar/base/nakagawa.png}{中川の太陽電池の特性}
-		\fig{fig7}{resources/solar/base/itano.png}{板野の太陽電池の特性}
+		\fg{fig4}{resources/solar/base/sangenya.png}{三軒家の太陽電池の特性}
+		\fg{fig5}{resources/solar/base/nagura.png}{名倉の太陽電池の特性}
+		\fg{fig6}{resources/solar/base/nakagawa.png}{中川の太陽電池の特性}
+		\fg{fig7}{resources/solar/base/itano.png}{板野の太陽電池の特性}
+
+		また、\fr{fig12}は、市販の太陽電池の特性である。
+		\fg{fig12}{resources/solar/kadai3/commerce.png}{市販の太陽電池のV-I特性}
 
 	\subsection{LEDの特性測定}
 		五色のLEDについて、V-I特性をグラフにしたのが\fr{fig8}である。
-		\fig{fig8}{resources/led/led.png}{LEDの特性}
+		\fg{fig8}{resources/led/led.png}{LEDの特性}
 
 \section{課題1〜3}
 	\subsection{課題1}
@@ -98,12 +115,12 @@
 		このような２つのグループに分かれてしまったのは、太陽電池の表側の電極が$p^+$領域にはみ出てしまい、ダイオードに平行な抵抗が接続されたような状態になってしまったことが原因と考えられる。
 		太陽電池だけの特性を見るためには、グラフの直線部分から並列抵抗の値を求め、そこに流れる電流値を計算して、実験データの電流値から引けば良いと考えられる。
 		以上のような操作を中川の太陽電池の特性に対して行うと、\fr{fig9}のようになる。
-		\fig{fig9}{resources/solar/diff/nakagawa.png}{中川の太陽電池のダイオード部のみの特性（暗所）}
+		\fg{fig9}{resources/solar/diff/nakagawa.png}{中川の太陽電池のダイオード部のみの特性（暗所）}
 		これを見ると、他方のグループの暗所での特性とよく似た形状のグラフが得られる事がわかる。
 		
 		\fr{fig4}の暗所のデータと、\fr{fig9}のデータについて、片対数グラフにプロットすると、\fr{fig10}・\fr{fig11}のようになる。
-		\fig{fig10}{resources/solar/logscale/sangenya.png}{三軒家の太陽電池の特性（片対数）}
-		\fig{fig11}{resources/solar/logscale/nakagawa.png}{中川の太陽電池の特性（片対数）}
+		\fg{fig10}{resources/solar/logscale/sangenya.png}{三軒家の太陽電池の特性（片対数）}
+		\fg{fig11}{resources/solar/logscale/nakagawa.png}{中川の太陽電池の特性（片対数）}
 		
 		ダイオードのI-V特性は、
 		\[
@@ -125,9 +142,49 @@
 		ただし、\fr{fig10}・\fr{fig11}の直線部は、外れ値はあるにせよ、きれいな直線になっていることから、トラップの効果もVに対する指数関数で表されることが必要と考えられるが、実際にそうであるのかは調べてもわからなかった。
 		
 	\subsection{課題2}
-		
+		開放電圧$V_{oc}$は\tr{tab1}、短絡電圧$I_{sc}$は\tr{tab2}、変換効率$\eta$は\tr{tab3}、曲線因子FFは\tr{tab4}のようになった。
+		\tab{tab1}{resources/solar/kadai2/voc.csv}{開放電圧$V_{oc}$}
+		\tab{tab2}{resources/solar/kadai2/isc.csv}{短絡電流$I_{sc}$}
+		\tab{tab3}{resources/solar/kadai2/efficiency.csv}{変換効率$\eta$}
+		\tab{tab4}{resources/solar/kadai2/ff.csv}{曲線因子FF}
+		ただし、$I_{sc}$については、各光量について、電圧が最小であるような点の電流を$I_{sc}$とした。また、最適動作点については、測定された各点について出力を計算し、最大となった電圧と電流の組を最適動作点としたところ、\tr{tab5}のようになった。
+		\tab{tab5}{resources/solar/kadai2/optimum.csv}{最適動作点}
+		また、太陽電池に入力された光のエネルギーは、太陽電池の$n^+$の部分が$8mm \times 8mm$の正方形であったと考えて計算し、以下のようであったとした。
+		\begin{description}
+			\item[高さ5cm]  $67.2 (mW)$
+			\item[高さ15cm] $27.2 (mW)$
+			\item[高さ25cm] $17.3 (mW)$
+		\end{description}
+
 	\subsection{課題3}
+		\fr{fig12}を\fr{fig4}〜\fr{fig7}と比較すると、市販の太陽電池の以下のような特長が見て取れる。
+		\begin{enumerate}
+			\item 立ち上がり電圧が高い
+			\item 最適動作点の電圧が高い
+			\item 降伏電圧がより低い（降伏し難い）
+			\item より多くの電流が生じている
+		\end{enumerate}
+		このうち、1,2,3については、市販の太陽電池は、３つの小さな太陽電池を直列に接続した構造をしていることから説明できる。
+		1と3については、太陽電池全体に印加した電圧の３分の１しか個々の太陽電池に電圧が印加されないことから説明できる。
+		2については、全体の出力電圧は個々の太陽電池の出力電圧の和になると考えられることから説明できる。
+		
+		また、4については、太陽電池の面積の違いから説明できる。すなわち、市販の太陽電池は光を受ける面積が大きいため、電池内により多くのキャリアが励起され、大きな電流が流れると考えられる。
+
 \section{発電コンテンストについて}
+	まず考えたのが、太陽電池を1つからだんだんと増やしていき、それぞれの場合について、いろいろな接続方法を試してみよう、ということだった。このときに測定した特性をグラフにしたのが、\fr{fig13}である(sはseriesの略、pはparallelの略)。
+	\fg{fig13}{resources/solar/suda.png}{太陽電池のつなぎ方による特性の変化}
+	この測定から分かったのは、須田先生が言っていたとおり、全部直列にしても全部並列にしても、どちらにしても成績が悪く、直列と並列を組み合わせたほうが成績が良くなるということだった。
+	
+	これが分かったので、今度はより成績の良い組み合わせ方を模索するべく、$3 \times 3$などの接続方法を試していたが、すべての接続方法を試す前に時間切れになった。
+	
+	また、この測定中、回路のつなぎ方に関係なく、太陽電池が正方形に近い形になるように配置して測定を行っていた。これは、電球の真下の一番光が強い場所になるべく近いところで発電させれば、より大きな出力が得られると考えたからである。
+
+	こうやればよかったと思ったことは主に２つある。１つは、結果論ではあるが、まず先に当て勘で$2\times5$や$5\times2$や$3\times3$などの、成績が良さそうな組み合わせを試してから、数が少ないときの傾向を調べたほうが良かったということである。時間切れになることは予測できたと思う。もう１つは、ダイオードの特性の温度依存性を利用するために、太陽電池を温めたり冷やしたりして変化を見るということである。おそらく、電池を温めると、
+	\[
+		I = I_0 \left( exp(\frac{eV}{kT}-1) \right)
+	\]
+のから、V-Iのグラフが全体的に右（Vが大）の方向にずれ、出力も上がるのではないかと思う。
+
 \section{LEDについて}
 \section{全体に関する考察、感想、提案など}
 
