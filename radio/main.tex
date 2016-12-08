@@ -1,0 +1,41 @@
+\documentclass[11pt]{ujarticle}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{listings, jlisting}
+\usepackage{listings-golang}
+
+\title{実習B 通信システム設計演習}
+\author{三軒家 佑將 \\ 1026-26-5817}
+\date{}
+
+\newcommand{\fg}[3]{ % \fg{label}{path}{caption},
+	\begin{figure}
+		\includegraphics[width=\textwidth]{#2}
+		\caption{#3}
+		\label{#1}
+	\end{figure}
+}
+
+\newcommand{\tab}[3]{ % \tab{label}{csv-path}{caption}
+	\begin{table}[htb]
+  		\begin{center}
+			\csvautotabular{#2}
+    		\caption{#3}
+			\label{#1}
+  		\end{center}
+	\end{table}
+}
+
+\newcommand{\fr}[1]{図\ref{#1}}
+\newcommand{\tr}[1]{表\ref{#1}}
+
+\begin{document}
+    \maketitle
+
+
+\end{document}
