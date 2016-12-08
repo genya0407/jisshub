@@ -45,7 +45,12 @@
 		教科書の例に習い、OOK信号を出力する回路を作成した。
 	\subsection{用いる素子の特性解析}
 		\subsubsection{LPF}
+			与えられたファイル（whistler.vi）とホイッスラー音声ファイル（whistler.wav）を用いて、LPFの動作を確認した。
+			
+			また、与えられたファイル（chirp.vi）を用いて、LPFによる劣化が最小になるようなカットオフ周波数を数値的に求めた。
+
 		\subsubsection{Amp}
+			
 	\subsection{送信機・受信機の作成}
 		\subsubsection{アナログ送信波の構成}
 		\subsubsection{デジタル送信波の構成}
@@ -68,6 +73,23 @@
 		\fr{fg1}のように回路を作成した。
 	\subsection{用いる素子の特性解析}
 		\subsubsection{LPF}
+			\fg{fg2}{2.whistler/whistlerp.png}{LPFの動作}
+			\fg{fg3}{3.lpf_hizumi/chirpp.png}{LPFによる劣化}
+			
+			LPFを用いてホイッスラー音声ファイルを加工したときの、音声波形と周波数スペクトルをグラフにしたのが\fr{fg2}である。
+			また、LPFを用いて雑音の入った疑似ホイッスラー音声ファイルを加工したときの、音声波形と周波数スペクトルをグラフにしたのが\fr{fg3}である。
+			
+			これらの図において、左の２つの図が音声波形であり、右の２つの図が周波数スペクトルである。また、上の２つの図がLPFの加工の前の音声についてのグラフであり、下の２つの図がLPFによる加工の後の音声についてのグラフである。
+
+			
+			\fr{fg2}の周波数スペクトルを表す２つの図から、LPFによりカットオフ周波数（6000Hz）より大きい周波数成分がカットされている事がわかる。
+
+			劣化量$\epsilon$
+			$$
+				\epsilon = \sqrt{\frac{\sum^{N}_{i=1} \left( S_{org} - S_{rec} \right)^2}{N\overline{S_{org}^{2}}}}
+			$$
+			が最小になるカットオフ周波数$f_c$を探索したところ、\fr{fg3}のとおり、$f_c=9000(Hz)$にて劣化量が最小（$\epsilon=5.75$）となった。
+
 		\subsubsection{Amp}
 	\subsection{送信機・受信機の作成}
 		\subsubsection{アナログ送信波の構成}
@@ -84,6 +106,6 @@
 		\subsubsection{ストレート受信機の作成}
 		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
 		\subsubsection{同期検波受信機の作成}
-\section{考察} % 課題の考察
-
+\section{考察}
+		
 \end{document}
