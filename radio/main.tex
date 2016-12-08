@@ -57,7 +57,7 @@
 		\subsubsection{Amp}
 			AmpブロックにSin波を入力し、出力波形を観察した。
 			また、Distブロックにより歪み率を測定して、増幅度による波形劣化の様子を調べた。
-	\subsection{送信機・受信機の作成}
+	\subsection{アナログ信号受信時の特性解析}
 		\subsubsection{アナログ送信波の構成}
 			異なる搬送波周波数の３つのAM変調波と、適当な最大雑音振幅をもつガウス雑音を足し合わせ、アナログ送信波を構成した。３つのAM変調波のパラメーターは以下の通りとした。
 			\begin{description}
@@ -86,18 +86,17 @@
 				\alpha = P_{D} - max{P_{I1},P_{I2}} \label{eq1}
 			\end{eqnarray}
 			によって定めた。ただし、$P_{D}$は所望波の出力(dB)を、$P_{I1},P_{I2}$はそれぞれ妨害波1,2の出力(dB)を表している。
-		\subsubsection{デジタル送信波の構成}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
-	\subsection{アナログ信号受信時の特性解析}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
+
+		\subsubsection{受信機の作成}
+			教科書を参考に、ストレート受信機、スーパーヘテロダイン2乗検波受信機、同期検波受信機をの回路を作成した。
+		\subsubsection{ストレート受信機の特性}
+		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
+		\subsubsection{同期検波受信機の特性}
 	\subsection{デジタル信号受信時の特性解析}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
+		\subsubsection{デジタル送信波の構成}
+		\subsubsection{ストレート受信機の特性}
+		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
+		\subsubsection{同期検波受信機の特性}
 
 \section{結果} % プログラムの画像、出力されたグラフ、実験結果の表
 	\subsection{LabVIEWの使い方}
@@ -121,7 +120,7 @@
 		\subsubsection{Amp}
 			実験のミスにより、データが保存されていなかった。
 
-	\subsection{送信機・受信機の作成}
+	\subsection{アナログ信号受信時の特性解析}
 		\subsubsection{アナログ送信波の構成}
 			\fg{fg4}{5.noise/Q_10/noised.png}{アナログ送信機と高周波増幅回路}
 			\tab{tb1}{5.noise/alpha.csv}{Q値ごとの妨害度}
@@ -130,22 +129,25 @@
 			この回路図の前段がアナログ送信機の回路であり、後段が高周波増幅回路である。
 			
 			また、\tr{tb1}は、BPFのQ値と、その時の妨害波の抑圧度である。これを見ると、Q値が大きくなると抑圧度が大きくなる事がわかる。
-		\subsubsection{デジタル送信波の構成}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
-	\subsection{アナログ信号受信時の特性解析}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
+		\subsubsection{受信機の作成}
+			\fg{fg5}{6.1.straight/noised.png}{ストレート受信機}
+			\fg{fg6}{6.2.superhetero/noised.png}{スーパーヘテロダイン2乗検波受信機}
+			\fg{fg7}{7.sync/isou_0/noised.png}{同期検波受信機}
+			
+			\fr{fg5}、\fr{fg6}、\fr{fg7}がそれぞれ、ストレート受信機、スーパーヘテロダイン2乗検波受信機、同期検波受信機の回路図である。
+
+		\subsubsection{ストレート受信機の特性}
+		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
+		\subsubsection{同期検波受信機の特性}
 	\subsection{デジタル信号受信時の特性解析}
-		\subsubsection{ストレート受信機の作成}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
-		\subsubsection{同期検波受信機の作成}
+		\subsubsection{デジタル送信波の構成}
+		\subsubsection{ストレート受信機の特性}
+		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
+		\subsubsection{同期検波受信機の特性}
 
 \section{考察}
 		\subsection{課題5}
-			式（\ref{eq1}）が、抑圧度としての妥当性を考察する。
+			式（\ref{eq1}）の、抑圧度としての妥当性を検討する。
 			
 			まず、抑圧度$\alpha$を、所望波の出力$A_D$と、妨害波の出力$A_I$を用いて、
 			$$
