@@ -12,13 +12,14 @@
 \author{三軒家 佑將 \\ 1026-26-5817}
 \date{}
 
-\newcommand{\fg}[3]{ % \fg{label}{path}{caption},
+\newcommand{\fg}[4][\textwidth]{ % \fg{label}{path}{caption},
 	\begin{figure}
+		\centering
 		\fbox{
-			\includegraphics[width=\textwidth]{./communication_system_2016_12_02/#2}
+			\includegraphics[width=#1]{./communication_system_2016_12_02/#3}
 		}
-		\caption{#3}
-		\label{#1}
+		\caption{#4}
+		\label{#2}
 	\end{figure}
 }
 
@@ -61,19 +62,19 @@
 		\subsubsection{アナログ送信波の構成}
 			異なる搬送波周波数の３つのAM変調波と、適当な最大雑音振幅をもつガウス雑音を足し合わせ、アナログ送信波を構成した。３つのAM変調波のパラメーターは以下の通りとした。
 			\begin{description}
-				\item[所望波]
+				\item[所望波] \mbox{}
 					\begin{description}
 						\item[搬送波周波数] 1400kHz
 						\item[変調周波数] 1000Hz
 						\item[変調度] 40\%
 					\end{description}
-				\item[妨害波1]
+				\item[妨害波1] \mbox{}
 					\begin{description}
 						\item[搬送波周波数] 1350kHz
 						\item[変調周波数] 1100Hz
 						\item[変調度] 40\%
 					\end{description}
-				\item[妨害波2]
+				\item[妨害波2] \mbox{}
 					\begin{description}
 						\item[搬送波周波数] 1450kHz
 						\item[変調周波数] 900Hz
@@ -83,15 +84,34 @@
 			
 			また、この送信波回路とBPF、Ampを用いて、高周波増幅を行ない、BPFのQ値によって、妨害波の抑圧度$\alpha$がどう変化するかを調べた。ここで、妨害度$\alpha$は、
 			\begin{eqnarray}
-				\alpha = P_{D} - max{P_{I1},P_{I2}} \label{eq1}
+				\alpha = P_{D} - {\rm max}\left( P_{I1},P_{I2} \right) \label{eq1}
 			\end{eqnarray}
 			によって定めた。ただし、$P_{D}$は所望波の出力(dB)を、$P_{I1},P_{I2}$はそれぞれ妨害波1,2の出力(dB)を表している。
 
 		\subsubsection{受信機の作成}
-			教科書を参考に、ストレート受信機、スーパーヘテロダイン2乗検波受信機、同期検波受信機をの回路を作成した。
-		\subsubsection{ストレート受信機の特性}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
-		\subsubsection{同期検波受信機の特性}
+			教科書を参考に、ストレート受信機、スーパーヘテロダイン2乗検波受信機、同期検波受信機の回路を作成した。
+		\subsubsection{受信機の特性}
+			ストレート受信機とスーパーヘテロダイン２乗検波受信機にて、信号の受信を行い、さらにDistブロックを用いて各受信機のひずみ率を計算した。
+			
+			ただし、受信時のパラメーターは以下のようである。
+			\begin{description}
+				\item[ストレート受信機] \mbox{}
+					\begin{description}
+						\item[LPFのカットオフ周波数] 1000Hz
+						\item[BPFのQ] 100
+						\item[BPFの中心周波数] 1400kHz
+					\end{description}
+				\item[スーパーヘテロダイン2乗検波受信機] \mbox{}
+					\begin{description}
+						\item[１段目のBPFのQ] 100
+						\item[１段目のBPFの中心周波数] 1400kHz
+						\item[２段目のBPFのQ] 100
+						\item[２段目のBPFの中心周波数（中間周波数）] 450kHz
+						\item[LPFのカットオフ周波数] 1500Hz
+					\end{description}
+			\end{description}
+			また、ストレート受信機の特性測定時のみ、誤って送信波に含まれるホワイトノイズの最大振幅を1とした（スーパーヘテロダイン２乗検波受信機の場合は最大振幅0とした）。
+
 	\subsection{デジタル信号受信時の特性解析}
 		\subsubsection{デジタル送信波の構成}
 		\subsubsection{ストレート受信機の特性}
@@ -136,9 +156,11 @@
 			
 			\fr{fg5}、\fr{fg6}、\fr{fg7}がそれぞれ、ストレート受信機、スーパーヘテロダイン2乗検波受信機、同期検波受信機の回路図である。
 
-		\subsubsection{ストレート受信機の特性}
-		\subsubsection{スーパーヘテロダイン2乗検波受信機の特性}
-		\subsubsection{同期検波受信機の特性}
+		\subsubsection{受信機の特性}
+			\fg[0.5\textwidth]{fg8}{6.1.straight/noisep.png}{ストレート受信機の受信波形}
+			\fg[0.5\textwidth]{fg9}{6.2.superhetero/noisep.png}{スーパーヘテロダイン2乗検波受信機の受信波形}
+
+			\fr{fg8}、\fr{fg9}がそれぞれ、ストレート受信機、スーパーヘテロダイン２乗検波受信機によって復号された信号の波形である。また、歪み率はそれぞれ、0.087\%と0.356\%となった。
 	\subsection{デジタル信号受信時の特性解析}
 		\subsubsection{デジタル送信波の構成}
 		\subsubsection{ストレート受信機の特性}
@@ -163,6 +185,6 @@
 			$$
 				\alpha = P_D - P_I
 			$$
-			となる。
+			となる。ところで、実験の設定では、妨害波が２つある。実際にはどちらもほとんど同じ値を示したため、式（\ref{eq1}）では適当に、２つの妨害波のうちより大きい値を示したものを$P_I$として採用するようにした。
 		
 \end{document}
