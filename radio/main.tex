@@ -25,7 +25,7 @@
 \newcommand{\tab}[3]{ % \tab{label}{csv-path}{caption}
 	\begin{table}[htb]
   		\begin{center}
-			\csvautotabular{#2}
+			\csvautotabular{./communication_system_2016_12_02/#2}
     		\caption{#3}
 			\label{#1}
   		\end{center}
@@ -47,14 +47,46 @@
 		\subsubsection{LPF}
 			与えられたファイル（whistler.vi）とホイッスラー音声ファイル（whistler.wav）を用いて、LPFの動作を確認した。
 			
-			また、与えられたファイル（chirp.vi）を用いて、LPFによる劣化が最小になるようなカットオフ周波数を数値的に求めた。
+			また、与えられたファイル（chirp.vi）を用いて、LPFによる劣化量$\epsilon$が最小になるようなカットオフ周波数を数値的に求めた。
+			ここで、劣化量$\epsilon$は、
+			$$
+				\epsilon = \sqrt{\frac{\sum^{N}_{i=1} \left( S_{org} - S_{rec} \right)^2}{N\overline{S_{org}^{2}}}}
+			$$
+			によって定めた。
 
 		\subsubsection{Amp}
-			
+			AmpブロックにSin波を入力し、出力波形を観察した。
+			また、Distブロックにより歪み率を測定して、増幅度による波形劣化の様子を調べた。
 	\subsection{送信機・受信機の作成}
 		\subsubsection{アナログ送信波の構成}
+			異なる搬送波周波数の３つのAM変調波と、適当な最大雑音振幅をもつガウス雑音を足し合わせ、アナログ送信波を構成した。３つのAM変調波のパラメーターは以下の通りとした。
+			\begin{description}
+				\item[所望波]
+					\begin{description}
+						\item[搬送波周波数] 1400kHz
+						\item[変調周波数] 1000Hz
+						\item[変調度] 40\%
+					\end{description}
+				\item[妨害波1]
+					\begin{description}
+						\item[搬送波周波数] 1350kHz
+						\item[変調周波数] 1100Hz
+						\item[変調度] 40\%
+					\end{description}
+				\item[妨害波2]
+					\begin{description}
+						\item[搬送波周波数] 1450kHz
+						\item[変調周波数] 900Hz
+						\item[変調度] 40\%
+					\end{description}
+			\end{description}
+			
+			また、この送信波回路とBPF、Ampを用いて、高周波増幅を行ない、BPFのQ値によって、妨害波の抑圧度$\alpha$がどう変化するかを調べた。ここで、妨害度$\alpha$は、
+			\begin{eqnarray}
+				\alpha = P_{D} - max{P_{I1},P_{I2}} \label{eq1}
+			\end{eqnarray}
+			によって定めた。ただし、$P_{D}$は所望波の出力(dB)を、$P_{I1},P_{I2}$はそれぞれ妨害波1,2の出力(dB)を表している。
 		\subsubsection{デジタル送信波の構成}
-		\subsubsection{パワースペクトルの表示}
 		\subsubsection{ストレート受信機の作成}
 		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
 		\subsubsection{同期検波受信機の作成}
@@ -84,17 +116,21 @@
 			
 			\fr{fg2}の周波数スペクトルを表す２つの図から、LPFによりカットオフ周波数（6000Hz）より大きい周波数成分がカットされている事がわかる。
 
-			劣化量$\epsilon$
-			$$
-				\epsilon = \sqrt{\frac{\sum^{N}_{i=1} \left( S_{org} - S_{rec} \right)^2}{N\overline{S_{org}^{2}}}}
-			$$
-			が最小になるカットオフ周波数$f_c$を探索したところ、\fr{fg3}のとおり、$f_c=9000(Hz)$にて劣化量が最小（$\epsilon=5.75$）となった。
+			劣化量$\epsilon$が最小になるカットオフ周波数$f_c$を探索したところ、\fr{fg3}のとおり、$f_c=9000(Hz)$周辺にて劣化量が最小（$\epsilon=5.75$）となった。
 
 		\subsubsection{Amp}
+			実験のミスにより、データが保存されていなかった。
+
 	\subsection{送信機・受信機の作成}
 		\subsubsection{アナログ送信波の構成}
+			\fg{fg4}{5.noise/Q_10/noised.png}{アナログ送信機と高周波増幅回路}
+			\tab{tb1}{5.noise/alpha.csv}{Q値ごとの妨害度}
+			
+			\fr{fg4}が、作成した回路である。
+			この回路図の前段がアナログ送信機の回路であり、後段が高周波増幅回路である。
+			
+			また、\tr{tb1}は、BPFのQ値と、その時の妨害波の抑圧度である。これを見ると、Q値が大きくなると抑圧度が大きくなる事がわかる。
 		\subsubsection{デジタル送信波の構成}
-		\subsubsection{パワースペクトルの表示}
 		\subsubsection{ストレート受信機の作成}
 		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
 		\subsubsection{同期検波受信機の作成}
@@ -106,6 +142,25 @@
 		\subsubsection{ストレート受信機の作成}
 		\subsubsection{スーパーヘテロダイン2乗検波受信機の作成}
 		\subsubsection{同期検波受信機の作成}
+
 \section{考察}
+		\subsection{課題5}
+			式（\ref{eq1}）が、抑圧度としての妥当性を考察する。
+			
+			まず、抑圧度$\alpha$を、所望波の出力$A_D$と、妨害波の出力$A_I$を用いて、
+			$$
+				\alpha = 10{\rm log }\left( \frac{A_D}{A_I} \right)
+			$$
+			で定義する。
+			ところで、パワースペクトルの値（所望波$P_D$、妨害波$P_I$）は、LabVIEWが表示するグラフ上ではデシベル単位で表示されているため、
+			\begin{eqnarray*}
+				P_D - P_I & = & 10{\rm log} \left( \frac{A_D}{A_0} \right) - 10{\rm log} \left( \frac{A_I}{{A_0}} \right) \\
+						  & = & 10{\rm log} \left( \frac{A_D}{A_I} \right)
+			\end{eqnarray*}
+			である。ただし、$A_0$は、デシベルの基準値である。これより、
+			$$
+				\alpha = P_D - P_I
+			$$
+			となる。
 		
 \end{document}
