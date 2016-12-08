@@ -1,0 +1,2 @@
+ (1 + m sin(ω_1)) sin(ω) sin(ω + ϕ)
+1/4 (A m sin(ω_1 - ϕ) + A m sin(ω_1 + ϕ) - A m sin(-2 ω + ω_1 - ϕ) - A m sin(2 ω + ω_1 + ϕ) - 2 A cos(2 ω + ϕ) + 2 A cos(ϕ))

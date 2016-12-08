@@ -206,4 +206,31 @@
 			\]
 			となる。これをストレート受信機と同様に検波することにより、${\rm sin}(2\pi f_1 t)$の信号が取り出せる。
 		
+		\subsection{課題7}
+			LPFに入力される信号の式は次のようになる。
+			\begin{eqnarray*}
+ 				(1 + m \sin(\omega_1)) \sin(\omega) \sin(\omega + \phi) =
+				\frac{1}{4} (A m \sin(\omega_1 - \phi) + A m \sin(\omega_1 + \phi) - A m \sin(-2 \omega + \omega_1 - \phi) \\ - A m \sin(2 \omega + \omega_1 + \phi) - 2 A \cos(2 \omega + \phi) + 2 A \cos(\phi))
+			\end{eqnarray*}
+			ただし、
+			\begin{eqnarray*}
+				\omega   & = & 2\pi t \times \mbox{搬送波周波数} \\
+				\omega_1 & = & 2\pi t \times \mbox{信号周波数} \\
+				\phi     & = & \mbox{掛け合わせる正弦波の位相}
+			\end{eqnarray*}
+			である。
+			
+			この信号から、低周波成分のみを取り出すと、
+			\[
+				\frac{1}{4}(A m \sin(\omega_1 - \phi) + A m \sin(\omega_1 + \phi) + 2 A \cos(\phi)) = \frac{1}{2}Am\sin(\omega_1)\cos(\phi) + \frac{1}{2}A\cos(\phi)
+			\]
+			となる。$\phi = 0$のとき、この信号の直流成分を除くことで、$\frac{1}{2}Am\sin(\omega_1)$が得られる。
+			
+			また、$\phi \neq 0$のとき、得られる信号は$\frac{1}{2}Am\sin(\omega_1)\cos(\phi)$となるため、信号の出力が$\cos(\phi)$倍されることになる。
+			
+			\fg[0.5\textwidth]{fg10}{7.sync/isou_0/noisep.png}{$\phi = 0$のときの波形}
+			\fg[0.5\textwidth]{fg11}{7.sync/isou_0.9/noisep.png}{$\phi = 0.9$のときの波形}
+			\fg[0.5\textwidth]{fg12}{7.sync/isou_1.5/noisep.png}{$\phi = 1.5$のときの波形}
+			\fg[0.5\textwidth]{fg13}{7.sync/isou_3/noisep.png}{$\phi = 3$のときの波形}
+			実際に位相$\phi$の値を変化させると、$\cos(\phi)$に従って振幅が変化しているようにみえる。
 \end{document}
