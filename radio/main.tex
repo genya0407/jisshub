@@ -185,6 +185,25 @@
 			$$
 				\alpha = P_D - P_I
 			$$
-			となる。ところで、実験の設定では、妨害波が２つある。実際にはどちらもほとんど同じ値を示したため、式（\ref{eq1}）では適当に、２つの妨害波のうちより大きい値を示したものを$P_I$として採用するようにした。
+			となる。ところで、実験の設定では、妨害波が２つある。実際にはどちらもほとんど同じ値を示したため、式（\ref{eq1}）では適当に、２つの妨害波のうち、より大きい値を示したものを$P_I$として採用するようにした。
+		
+		\subsection{課題6}
+			二段目のBPFに入力される信号の式は、次のようになる。
+			\begin{eqnarray*}
+				\left( A (1 + m {\rm sin}(\omega)){\rm sin}(\omega_1) + {\rm sin}(\omega + \omega_m) \right)^2 = 
+				\frac{1}{8} (A^2 m^2 {\rm cos}(2 \omega - 2 \omega_1) + A^2 m^2 {\rm cos}(2 \omega + 2 \omega_1) \\
+				- 4 A^2 m {\rm sin}(\omega - 2 \omega_1) - 4 A^2 m {\rm sin}(\omega + 2 \omega_1) ... \mbox{(略)})
+			\end{eqnarray*}
+			ただし、
+			\begin{eqnarray*}
+				\omega   & = & 2\pi t \times \mbox{搬送波周波数} \\
+				\omega_1 & = & 2\pi t \times \mbox{信号周波数} \\
+				\omega_m & = & 2\pi t \times \mbox{中間周波数}
+			\end{eqnarray*}
+			である。この式から、$\omega_m$周辺の周波数の項のみを取り出すと、
+			\[
+				-\frac{1}{2}A{\rm sin}(\omega_m - \omega_1) + \frac{1}{2} A {\rm sin}(\omega_1 + \omega_m) = A {\rm cos}(\omega_m) {\rm sin}(\omega_1)
+			\]
+			となる。これをストレート受信機と同様に検波することにより、${\rm sin}(2\pi f_1 t)$の信号が取り出せる。
 		
 \end{document}
