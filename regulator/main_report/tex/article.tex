@@ -1,0 +1,85 @@
+\documentclass[11pt]{jsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{comment}
+\usepackage{listings, jlisting}
+\usepackage{amsmath, amssymb}
+\usepackage{wrapfig}
+
+\title{電気電子工学実習B シリーズレギュレータ}
+\author{三軒家 佑將}
+\date{}
+
+\newcommand{\fg}[3]{ % \fg{label}{path}{caption},
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{./figs/#2}
+        \caption{#3}
+        \label{#1}
+    \end{figure}
+}
+
+
+\newcommand{\cir}[3]{ % \fg{label}{path}{caption},
+    \begin{wrapfigure}{R}{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=0.45\textwidth]{./figs/#2}
+            \caption{#3}
+            \label{#1}
+         \end{center}
+    \end{wrapfigure}
+}
+
+\newcommand{\tab}[3]{ % \tab{label}{csv-path}{caption}
+    \begin{table}[htb]
+          \begin{center}
+            \csvautotabular{./data/#2}
+            \caption{#3}
+            \label{#1}
+          \end{center}
+    \end{table}
+}
+
+\newcommand{\fr}[1]{図\ref{#1}}
+\newcommand{\tr}[1]{表\ref{#1}}
+\newcommand{\er}[1]{式(\ref{#1})}
+
+\begin{document}
+\maketitle
+
+\section{目的}
+直流安定化電源を設計・作成し、その動作特性を評価する。
+
+\section{原理・設計}
+\fg{fig1}{block.png}{直流安定化電源回路の構成図}
+直流安定化電源回路は、交流入力から安定化直流出力を生み出す回路である。直流安定化電源回路は、\fr{fig1}のように構成される。
+整流回路は、交流入力を直流出力に変換する回路である。
+平滑回路は、整流回路から得られる直流出力から交流成分を取り除き、より直流らしい出力を得る回路である。
+安定化電源回路は、リップルや外乱による出力の変動を小さくするための回路である。
+
+% 実験３のRの決め方を解説する
+
+\section{方法}
+\subsection{整流回路と平滑回路の実験}
+\cir{fig2}{bridge.png}{ブリッジ回路}
+\fr{fig2}に示したブリッジ回路を組み立てた。
+交流入力電圧が15V（実効値）になるようにスライドレギュレーターを調整した。
+
+この状態で負荷電流を0から300mAまで変化させ、負荷電流に対する負荷電圧特性をグラフに描いた。また、同様に負荷電流に対するリップル含有率の関係をグラフに描いた。また、負荷電流最大のときと最小のときのそれぞれについて、オシロスコープで出力波形を観測し、方眼紙に写生した。
+
+\cir{fig3}{filter.png}{コンデンサ入力平滑回路}
+さらに、ブリッジ回路の後段に、\fr{fig3}に示すコンデンサ入力型平滑回路を接続し、上記と同様の実験を行った。
+
+\subsection{定電流回路の実験}
+\cir{fig4}{stable-v.png}{定電流回路}
+\fr{fig4}の定電流回路を組み立て、入力に直流可変定電圧電源を接続した。
+入力電圧$E_i$を0から20Vまで変化させて、出力電流を測定した。
+負荷抵抗を変化させ、負荷抵抗の値ごとに入力電圧に対する出力電流の特性曲線を描いた。
+
+さらに、直流可変定電圧電源の代わりにブリッジ整流コンデンサ入力平滑回路を定電流回路に接続し、交流入力電圧を15Vとした。
+負荷抵抗を470$\Omega$から3.3${\rm k}\Omega$まで変化させ、出力電流及びリップルを測定し、負荷抵抗に対する出力電流、リップル含有率の特性曲線を描いた。
+
+\subsection{低電圧回路の実験}
+
+\section{実験結果}
+\section{考察}
+\end{document}
