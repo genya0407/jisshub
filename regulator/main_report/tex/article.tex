@@ -5,24 +5,44 @@
 \usepackage{listings, jlisting}
 \usepackage{amsmath, amssymb}
 \usepackage{wrapfig}
+\usepackage{fancybox}
+\usepackage{ascmac}
 
 \title{電気電子工学実習B シリーズレギュレータ}
 \author{三軒家 佑將}
 \date{}
 
+\setlength\floatsep{5pt}
+\setlength\textfloatsep{5pt}
+\setlength\intextsep{5pt}
+\setlength\abovecaptionskip{0pt}
+
 \newcommand{\fg}[3]{ % \fg{label}{path}{caption},
     \begin{figure}
-        \includegraphics[width=0.9\textwidth]{./figs/#2}
-        \caption{#3}
-        \label{#1}
+        \begin{center}
+            \includegraphics[width=\textwidth]{./figs/#2}
+            \caption{#3}
+            \label{#1}
+        \end{center}
     \end{figure}
 }
 
+\newcommand{\dummyfig}[2]{
+    \begin{figure}
+        \begin{center}
+            \begin{shadebox}
+                手書きの図のため、巻末に添付
+            \end{shadebox}
+            \caption{#2}
+            \label{#1}
+        \end{center}
+    \end{figure}
+}
 
 \newcommand{\cir}[3]{ % \fg{label}{path}{caption},
-    \begin{wrapfigure}{R}{0.5\textwidth}
+    \begin{wrapfigure}{R}{0.45\textwidth}
         \begin{center}
-            \includegraphics[width=0.45\textwidth]{./figs/#2}
+            \includegraphics[width=0.4\textwidth]{./figs/#2}
             \caption{#3}
             \label{#1}
          \end{center}
@@ -61,16 +81,16 @@
 \section{方法}
 \subsection{整流回路と平滑回路の実験}
 \cir{fig2}{bridge.png}{ブリッジ回路}
+\cir{fig3}{filter.png}{コンデンサ入力平滑回路}
 \fr{fig2}に示したブリッジ回路を組み立てた。
 交流入力電圧が15V（実効値）になるようにスライドレギュレーターを調整した。
 
-この状態で負荷電流を0から300mAまで変化させ、負荷電流に対する負荷電圧特性をグラフに描いた。また、同様に負荷電流に対するリップル含有率の関係をグラフに描いた。また、負荷電流最大のときと最小のときのそれぞれについて、オシロスコープで出力波形を観測し、方眼紙に写生した。
+この状態で負荷電流を0から230mAまで変化させ、負荷電流に対する負荷電圧特性をグラフに描いた。また、同様に負荷電流に対するリップル含有率の関係をグラフに描いた。また、負荷電流最大のときと最小のときのそれぞれについて、オシロスコープで出力波形を観測し、方眼紙に写生した。
 
-\cir{fig3}{filter.png}{コンデンサ入力平滑回路}
 さらに、ブリッジ回路の後段に、\fr{fig3}に示すコンデンサ入力型平滑回路を接続し、上記と同様の実験を行った。
 
 \subsection{定電流回路の実験}
-\cir{fig4}{stable-v.png}{定電流回路}
+\cir{fig4}{stable-i.png}{定電流回路}
 \fr{fig4}の定電流回路を組み立て、入力に直流可変定電圧電源を接続した。
 入力電圧$E_i$を0から20Vまで変化させて、出力電流を測定した。
 負荷抵抗を変化させ、負荷抵抗の値ごとに入力電圧に対する出力電流の特性曲線を描いた。
@@ -78,8 +98,48 @@
 さらに、直流可変定電圧電源の代わりにブリッジ整流コンデンサ入力平滑回路を定電流回路に接続し、交流入力電圧を15Vとした。
 負荷抵抗を470$\Omega$から3.3${\rm k}\Omega$まで変化させ、出力電流及びリップルを測定し、負荷抵抗に対する出力電流、リップル含有率の特性曲線を描いた。
 
-\subsection{低電圧回路の実験}
+\subsection{定電圧回路の実験}
+\cir{fig5}{stable-v.png}{定電圧回路}
+\fr{fig5}の定電圧回路を組み立て、入力に直流可変定電圧電源を接続した。
+負荷電流が一定の条件下(0mA, 75mA, 150mA)で、入力電圧${\rm E_i}$を10Vから18Vまで変化させて、出力電圧${\rm E_o}$、基準電圧${\rm V_z}$を測定した。
+そして、負荷電流をパラメータとして入力電圧に対する出力電圧、基準電圧の特性曲線を描いた。
+
+さらに、ブリッジ整流コンデンサ入力平滑回路を定電圧回路に接続し、交流入力電圧$E_S$を15Vとした。
+負荷電流を0から200mAまで20mA間隔で変化させ、出力電圧及びリップルを測定し、負荷電流に対する
+出力電圧、リップル含有率の特性曲線を描いた。
+また、出力電圧、${\rm TR_2}$のベース電位、ツェナーダイオードの両端の波形を観測し、方眼紙に写した。
+
+また、ブリッジ整流コンデンサ入力平滑回路を接続した回路において、負荷電流を一定（0mA, 75mA, 150mA）として、スライドレギュレータにより交流入力電圧$E_S$を15V$\pm$2Vの範囲で変化させて出力電圧を測定し、入力電圧変動に対する出力電圧の特性曲線を描いた。
 
 \section{実験結果}
+\subsection{整流回路と平滑回路の実験}
+\fg{fig6}{{1.voltage}.png}{負荷電流ー負荷電圧特性}
+\fg{fig7}{{1.ripple}.png}{負荷電流ーリップル含有率特性}
+\dummyfig{fig8}{入力電圧波形}
+\dummyfig{fig9}{出力電圧波形}
+
+\fg{fig10}{{2.voltage}.png}{負荷電流ー負荷電圧特性}
+\fg{fig11}{{2.ripple}.png}{負荷電流ーリップル含有率特性}
+\dummyfig{fig12}{入力電圧波形}
+\dummyfig{fig13}{出力電圧波形}
+
+\subsection{定電流回路の実験}
+\fg{fig14}{{3.voltage}.png}{入力電圧ー出力電流特性}
+
+\fg{fig15}{{4.current}.png}{負荷抵抗ー出力電流特性}
+\fg{fig16}{{4.ripple}.png}{負荷抵抗ーリップル含有率特性}
+
+\subsection{定電圧回路の実験}
+\fg{fig17}{{5.output}.png}{入力電圧ー出力電圧特性}
+\fg{fig18}{{5.zener}.png}{入力電圧ー基準電圧特性}
+
+\fg{fig19}{{6.voltage}.png}{負荷電流ー出力電圧特性}
+\fg{fig20}{{6.ripple}.png}{負荷電流ーリップル含有率特性}
+\dummyfig{fig21}{出力電圧波形}
+\dummyfig{fig22}{${\rm TR_2}$のベース電位の波形}
+\dummyfig{fig23}{ツェナーダイオードの両端の波形}
+
+\fg{fig24}{{7.output}.png}{入力電圧ー出力電圧特性}
+
 \section{考察}
 \end{document}
