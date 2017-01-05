@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1483607534 "article.dvi" "article.pdf" "article" 1483607536
-  "article.dvi" 1483607534 20612 ae4179c35025a68c45e7e9b9dcdf9868 "latex"
+["dvipdf"] 1483637184 "article.dvi" "article.pdf" "article" 1483637185
+  "article.dvi" 1483637184 26456 a78cdff50c8288e10f19af9ac048206c "latex"
   (generated)
   "article.pdf"
-["latex"] 1483607532 "tex/article.tex" "article.dvi" "article" 1483607536
+["latex"] 1483637181 "tex/article.tex" "article.dvi" "article" 1483637185
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -29,14 +29,14 @@
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/ascmac.sty" 1462837567 601 ed0d9e02a6ea31a4aa45dceec6706c83 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/tascmac.sty" 1462837567 9533 a69ba108fecf6a01da2d3d397ad8adb0 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1400831602 55132 1568ea7ebb5ed2b2ea63f45c633eadda ""
-  "article.aux" 1483607534 4674 e761386b98bf094288b0fac50fade425 ""
-  "figs/1.ripple.png" 1483540410 36930 b93dd233521101e4bf059371dbfda9b1 ""
+  "article.aux" 1483637184 5621 35eb3bbd00a517cdad5b9f5d0b569e90 ""
+  "figs/1.ripple.png" 1483628442 37524 8efeac524fd7d267dfcdd080b014a0a5 ""
   "figs/1.voltage.png" 1483540091 32222 27db63554e4b59a27a1413732613e1be ""
-  "figs/2.ripple.png" 1483540460 36848 befd92483d71a7c443a0fe4619bddce8 ""
+  "figs/2.ripple.png" 1483628549 37719 da60b66e34bac82139c9e65a0f4a45c4 ""
   "figs/2.voltage.png" 1483540471 35006 2f36e4286c561f180cd9b3a046cbd7e3 ""
   "figs/3.voltage.png" 1483540623 35312 07e66a414276aafcc94725e6bed3ff94 ""
   "figs/4.current.png" 1483540716 38267 035a426d2180259113ae0db661218e9e ""
-  "figs/4.ripple.png" 1483540665 38273 292ea740ac4de634dfaba033e8511a90 ""
+  "figs/4.ripple.png" 1483628628 38246 795895b42d768b66fc8e8d15936947b9 ""
   "figs/5.output.png" 1483540746 29405 a8c91723cd64f8d779efb01e7bce8699 ""
   "figs/5.zener.png" 1483540794 31755 5c1d7d8855749742de8f0c2ce3689c63 ""
   "figs/6.ripple.png" 1483541298 34687 0a94839e8ce7e5d68e146737e4a3fd7d ""
@@ -47,8 +47,9 @@
   "figs/filter.png" 1483522494 4086 a6f7598c326aaf3a166e6bbe311ae4bc ""
   "figs/stable-i.png" 1483536463 3990 a2ec924266086c8100557bdba77f7fd8 ""
   "figs/stable-v.png" 1483523758 4923 3fe30071ee24a4e459faef5f4fda8a2f ""
-  "tex/article.tex" 1483607530 14508 d02993c021fd1c11768b200d3c89d269 ""
+  "figs/wave.png" 1483631071 3609 66b4e9cd8708b6e869ed85e54572d50b ""
+  "tex/article.tex" 1483637179 18217 0ca16b5c00fd297ba982eb83810375a5 ""
   (generated)
+  "article.aux"
   "article.dvi"
   "article.log"
-  "article.aux"
