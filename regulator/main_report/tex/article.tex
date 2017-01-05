@@ -40,13 +40,13 @@
 }
 
 \newcommand{\cir}[3]{ % \fg{label}{path}{caption},
-    \begin{wrapfigure}{R}{0.45\textwidth}
+    \begin{figure}
         \begin{center}
-            \includegraphics[width=0.4\textwidth]{./figs/#2}
+            \includegraphics[width=0.7\textwidth]{./figs/#2}
             \caption{#3}
             \label{#1}
          \end{center}
-    \end{wrapfigure}
+    \end{figure}
 }
 
 \newcommand{\tab}[3]{ % \tab{label}{csv-path}{caption}
@@ -76,12 +76,43 @@
 平滑回路は、整流回路から得られる直流出力から交流成分を取り除き、より直流らしい出力を得る回路である。
 安定化電源回路は、リップルや外乱による出力の変動を小さくするための回路である。
 
-% 実験３のRの決め方を解説する
+\cir{fig2}{bridge.png}{ブリッジ回路}
+\fr{fig2}はブリッジ回路整流回路の回路図である。
+
+\cir{fig3}{filter.png}{コンデンサ入力平滑回路}
+\fr{fig3}はコンデンサ入力平滑回路である。
+回路図中のコンデンサとしては、容量470$\mu$Fの電解コンデンサを使用した。
+
+\cir{fig4}{stable-i.png}{定電流回路}
+\fr{fig4}は定電流回路である。
+$I_o = 10{\rm mA}$とするべく、図中の抵抗の値はそれぞれ、
+\begin{description}
+    \setlength{\leftskip}{3.0cm}
+    \item[$R_S$] 500$\Omega$
+    \item[$R_B$] 1k$\Omega$
+\end{description}
+とした。
+
+\cir{fig5}{stable-v.png}{定電圧回路}
+\fr{fig4}は定電流回路である。仕様は以下のようにした。
+\begin{description}
+    \setlength{\leftskip}{3.0cm}
+    \item[入力電圧] $E_i = 15{\rm V}$
+    \item[出力電圧] $E_o = 9{\rm V}$
+    \item[出力電流] $0{\rm mA} < I_o < 150{\rm mA}$
+\end{description}
+この仕様を満たすべく、図中の抵抗の値はそれぞれ、
+\begin{description}
+    \setlength{\leftskip}{3.0cm}
+    \item[$R_1$] 1.33k$\Omega$
+    \item[$R_2$] 1.55k$\Omega$(3.3k$\Omega$を２つ並列)
+    \item[$R_3$] 3.3k$\Omega$
+    \item[$R_4$] 6.3k$\Omega$(5.1k$\Omega$と1.2k$\Omega$を直列)
+\end{description}
+とした。
 
 \section{方法}
 \subsection{整流回路と平滑回路の実験}
-\cir{fig2}{bridge.png}{ブリッジ回路}
-\cir{fig3}{filter.png}{コンデンサ入力平滑回路}
 \fr{fig2}に示したブリッジ回路を組み立てた。
 交流入力電圧が15V（実効値）になるようにスライドレギュレーターを調整した。
 
@@ -90,7 +121,6 @@
 さらに、ブリッジ回路の後段に、\fr{fig3}に示すコンデンサ入力型平滑回路を接続し、上記と同様の実験を行った。
 
 \subsection{定電流回路の実験}
-\cir{fig4}{stable-i.png}{定電流回路}
 \fr{fig4}の定電流回路を組み立て、入力に直流可変定電圧電源を接続した。
 入力電圧$E_i$を0から20Vまで変化させて、出力電流を測定した。
 負荷抵抗を変化させ、負荷抵抗の値ごとに入力電圧に対する出力電流の特性曲線を描いた。
@@ -99,7 +129,6 @@
 負荷抵抗を470$\Omega$から3.3${\rm k}\Omega$まで変化させ、出力電流及びリップルを測定し、負荷抵抗に対する出力電流、リップル含有率の特性曲線を描いた。
 
 \subsection{定電圧回路の実験}
-\cir{fig5}{stable-v.png}{定電圧回路}
 \fr{fig5}の定電圧回路を組み立て、入力に直流可変定電圧電源を接続した。
 負荷電流が一定の条件下(0mA, 75mA, 150mA)で、入力電圧${\rm E_i}$を10Vから18Vまで変化させて、出力電圧${\rm E_o}$、基準電圧${\rm V_z}$を測定した。
 そして、負荷電流をパラメータとして入力電圧に対する出力電圧、基準電圧の特性曲線を描いた。

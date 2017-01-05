@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1483603564 "article.dvi" "article.pdf" "article" 1483603565
-  "article.dvi" 1483603564 19596 27d7d91fad9ea5be90b7b4da57c6908d "latex"
+["dvipdf"] 1483607534 "article.dvi" "article.pdf" "article" 1483607536
+  "article.dvi" 1483607534 20612 ae4179c35025a68c45e7e9b9dcdf9868 "latex"
   (generated)
   "article.pdf"
-["latex"] 1483603562 "tex/article.tex" "article.dvi" "article" 1483603565
+["latex"] 1483607532 "tex/article.tex" "article.dvi" "article" 1483607536
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -29,7 +29,7 @@
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/ascmac.sty" 1462837567 601 ed0d9e02a6ea31a4aa45dceec6706c83 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/tascmac.sty" 1462837567 9533 a69ba108fecf6a01da2d3d397ad8adb0 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1400831602 55132 1568ea7ebb5ed2b2ea63f45c633eadda ""
-  "article.aux" 1483603564 4669 15460169ff7843e199d9dd70c99037c6 ""
+  "article.aux" 1483607534 4674 e761386b98bf094288b0fac50fade425 ""
   "figs/1.ripple.png" 1483540410 36930 b93dd233521101e4bf059371dbfda9b1 ""
   "figs/1.voltage.png" 1483540091 32222 27db63554e4b59a27a1413732613e1be ""
   "figs/2.ripple.png" 1483540460 36848 befd92483d71a7c443a0fe4619bddce8 ""
@@ -47,8 +47,8 @@
   "figs/filter.png" 1483522494 4086 a6f7598c326aaf3a166e6bbe311ae4bc ""
   "figs/stable-i.png" 1483536463 3990 a2ec924266086c8100557bdba77f7fd8 ""
   "figs/stable-v.png" 1483523758 4923 3fe30071ee24a4e459faef5f4fda8a2f ""
-  "tex/article.tex" 1483603561 13458 e6b5d7890c9234a0b3316faa3ff130ce ""
+  "tex/article.tex" 1483607530 14508 d02993c021fd1c11768b200d3c89d269 ""
   (generated)
+  "article.dvi"
   "article.log"
   "article.aux"
-  "article.dvi"
